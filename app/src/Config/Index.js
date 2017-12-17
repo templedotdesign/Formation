@@ -7,3 +7,7 @@ export { default as Resort } from './Resort/Resort';
 export { default as Cruise } from './Cruise/Cruise';
 export { default as TripInfo } from './TripInfo/TripInfo';
 export { default as AdditionalInfo } from './AdditionalInfo/AdditionalInfo';
+export { default as PaymentType } from './PaymentType/PaymentType';
+export { default as PaymentInfo } from './PaymentInfo/PaymentInfo';
+export { default as PaymentAmount } from './PaymentAmount/PaymentAmount';
+export { default as BillingInfo } from './BillingInfo/BillingInfo'

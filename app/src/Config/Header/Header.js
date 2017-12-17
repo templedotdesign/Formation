@@ -4,14 +4,14 @@ export default {
   primaryAgent: {
     attributes: {},
     elementType: 'select',
-    label: 'Who is your travel agent?',
+    label: 'Who Is Your Travel Agent?',
     options: [],
     touched: false,
     value: '',
     validation: {
       required: true
     },
-    valid: true
+    valid: false
   },
   numOfPassengers: {
     attributes: {},
@@ -23,7 +23,7 @@ export default {
     validation: {
       required: true
     },
-    valid: true
+    valid: false
   },
   travelType: {
     attributes: {},
@@ -35,6 +35,6 @@ export default {
     validation: {
       required: true
     },
-    valid: true
+    valid: false
   },
 }

@@ -40,7 +40,14 @@
 }
 
 .ConfigurableForm button:hover {
+  background-color: black;
+  color: white;
+}
+
+.ConfigurableForm button:disabled {
   background-color: #ccc;
+  color: #ddd;
+  cursor: not-allowed;
 }
 
 @media(max-width:750px) {

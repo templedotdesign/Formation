@@ -1,11 +1,13 @@
+import * as Constants from '../../Constants/ReservationForm/ReservationForm';
+
 export default {
-  country: {
+  ccNumber: {
     attributes: {
       type: 'text',
-      placeholder: 'USA'
+      placeholder: '1234-1234-1234-1234'
     },
     elementType: 'input',
-    label: 'Your Country:',
+    label: 'Credit Card Number:',
     options: [],
     touched: false,
     value: '',
@@ -14,13 +16,13 @@ export default {
     },
     valid: false
   },
-  street: {
+  ccExpirationMonth: {
     attributes: {
       type: 'text',
-      placeholder: '123 Main St.'
+      placeholder: 'MM'
     },
     elementType: 'input',
-    label: 'Street Address:',
+    label: 'Expiration Month:',
     options: [],
     touched: false,
     value: '',
@@ -29,13 +31,13 @@ export default {
     },
     valid: false
   },
-  city: {
+  ccExpirationYear: {
     attributes: {
       type: 'text',
-      placeholder: 'Columbus'
+      placeholder: 'YY'
     },
     elementType: 'input',
-    label: 'City:',
+    label: 'Expiration Year:',
     options: [],
     touched: false,
     value: '',
@@ -44,13 +46,13 @@ export default {
     },
     valid: false
   },
-  state: {
+  ccv: {
     attributes: {
       type: 'text',
-      placeholder: 'Ohio'
+      placeholder: '123'
     },
     elementType: 'input',
-    label: 'State:',
+    label: 'CCV:',
     options: [],
     touched: false,
     value: '',
@@ -59,45 +61,28 @@ export default {
     },
     valid: false
   },
-  zip: {
+  ccName: {
     attributes: {
       type: 'text',
-      placeholder: '12345'
+      placeholder: 'John Q. Doe'
     },
     elementType: 'input',
-    label: 'Zip Code:',
+    label: 'Name On Card:',
     options: [],
     touched: false,
     value: '',
     validation: {
-      required: true,
-      zip: true
+      required: true
     },
     valid: false
   },
-  email1: {
+  ccDescription: {
     attributes: {
-      type: 'email',
-      placeholder: 'john@doe.com'
+      type: 'text',
+      placeholder: 'Describe Payment'
     },
     elementType: 'input',
-    label: 'Email:',
-    options: [],
-    touched: false,
-    value: '',
-    validation: {
-      required: true,
-      email: true
-    },
-    valid: false
-  },
-  email2: {
-    attributes: {
-      type: 'email',
-      placeholder: 'john@doe.com'
-    },
-    elementType: 'input',
-    label: 'Email 2:',
+    label: 'Payment Description:',
     options: [],
     touched: false,
     value: '',
@@ -106,34 +91,28 @@ export default {
     },
     valid: false
   },
-  phone1: {
-    attributes: {
-      type: 'text',
-      placeholder: '123-123-1234'
-    },
-    elementType: 'input',
-    label: 'Phone:',
-    options: [],
-    touched: false,
-    value: '',
-    validation: {
-      required: true
-    },
-    valid: false
-  },
-  phone2: {
-    attributes: {
-      type: 'text',
-      placeholder: '123-123-1234'
-    },
-    elementType: 'input',
-    label: 'Phone 2:',
-    options: [],
+  billingAddress: {
+    attributes: {},
+    elementType: 'select',
+    label: 'Billing Address Same As Contact Address:',
+    options: Constants.YES_NO,
     touched: false,
     value: '',
     validation: {
       required: false
     },
     valid: false
-  }
+  },
+  ccAmount: {
+    attributes: {},
+    elementType: 'select',
+    label: 'Pay In Full Or Deposit:',
+    options: Constants.PAYMENT_AMOUNTS,
+    touched: false,
+    value: '',
+    validation: {
+      required: false
+    },
+    valid: false
+  },
 }

@@ -1,6 +1,6 @@
 import * as Constants from '../../Constants/ReservationForm/ReservationForm';
 
-export const resort = {
+export default {
   preferredResort: {
     attributes: {
       type: 'text',
@@ -12,7 +12,7 @@ export const resort = {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },

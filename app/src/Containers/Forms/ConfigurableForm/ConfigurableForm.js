@@ -6,6 +6,7 @@ import * as Config from '../../../Config/Index';
 
 import Field from '../../../Components/Forms/Field/Field';
 import FieldGroup from '../../../Components/Forms/FieldGroup/FieldGroup';
+import Notification from '../../../Components/Forms/Notification/Notification';
 
 import classes from './ConfigurableForm.css';
 
@@ -38,8 +39,15 @@ class ConfigurableForm extends Component {
       resortConfig: Config.Resort,
       cruiseConfig: Config.Cruise,
       tripInfoConfig: Config.TripInfo,
+      paymentTypeConfig: Config.PaymentType,
+      paymentInfoConfig: Config.PaymentInfo,
+      paymentAmountConfig: Config.PaymentAmount,
+      billingInfoConfig: Config.BillingInfo,
       additionalInfoConfig: Config.AdditionalInfo
-    }
+    },
+    uploadSuccess: false,
+    uploadFailure: false,
+    formIsValid: true
   }
 
   componentDidMount() {
@@ -75,13 +83,41 @@ class ConfigurableForm extends Component {
       formElement.touched = true;
     }
     formElement.value = event.target.value;
+    formElement.valid = this.checkValidity(formElement.value, formElement.validation);
     sectionState[id] = formElement;
     formState[section] = sectionState;
     this.setState({...this.state, formConfig: formState});
   };
 
+  checkValidity = (value, validation) => {
+    let isValid = true;
+    if(validation.required === false) {
+      return isValid;
+    } else {
+        if(validation.zip) {
+          if(value.trim().length < 5  && isValid) {
+            isValid = false;
+          }
+
+          if(value.trim().length > 10 && isValid) {
+            isValid = false;
+          }
+        }
+        if(validation.email && isValid) {
+          const re =  new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/); // eslint-disable-line
+          isValid = re.test(value);
+        }
+        if(value.trim() === '' && isValid) {
+          isValid = false;
+        }
+        return isValid; 
+    }
+  };
+
   handleSubmit = (event) => {
-    console.log(this.state);    
+    event.preventDefault();
+    //this.setState({...this.state, uploadSuccess: true});
+    console.log(this.state);        
   };
 
   render() {
@@ -174,11 +210,104 @@ class ConfigurableForm extends Component {
       tripInfoKeysArray.push(key);
     }
 
+    let paymentTypeKeysArray = [];
+    for(const key in this.state.formConfig.paymentTypeConfig) {
+      paymentTypeKeysArray.push(key);
+    }
+
+    let paymentInfoKeysArray = [];
+    for(const key in this.state.formConfig.paymentInfoConfig) {
+      paymentInfoKeysArray.push(key);
+    }
+
+    let paymentInfo = null;
+    if(this.state.formConfig.paymentTypeConfig.paymentType.value !== '') {
+      paymentInfo = (
+        paymentInfoKeysArray.map(key => {
+          return(
+          <Field
+            key={key}
+            label={this.state.formConfig.paymentInfoConfig[key].label}
+            elementType={this.state.formConfig.paymentInfoConfig[key].elementType} 
+            attributes={this.state.formConfig.paymentInfoConfig[key].attributes}
+            options={this.state.formConfig.paymentInfoConfig[key].options}
+            touched={this.state.formConfig.paymentInfoConfig[key].touched}
+            value={this.state.formConfig.paymentInfoConfig[key].value}
+            changed={(event) => this.handleChange(event, 'paymentInfoConfig', key)}
+            valid={this.state.formConfig.paymentInfoConfig[key].valid}
+            required={this.state.formConfig.paymentInfoConfig[key].validation.required}/>
+          );
+        })
+      );
+    }
+
+    let paymentAmountKeysArray = [];
+    for(const key in this.state.formConfig.paymentAmountConfig) {
+      paymentAmountKeysArray.push(key);
+    }
+
+    let paymentAmount = null;
+    if(this.state.formConfig.paymentInfoConfig.ccAmount.value === 'Other') {
+      paymentAmount = (
+        paymentAmountKeysArray.map(key => {
+          return(
+          <Field
+            key={key}
+            label={this.state.formConfig.paymentAmountConfig[key].label}
+            elementType={this.state.formConfig.paymentAmountConfig[key].elementType} 
+            attributes={this.state.formConfig.paymentAmountConfig[key].attributes}
+            options={this.state.formConfig.paymentAmountConfig[key].options}
+            touched={this.state.formConfig.paymentAmountConfig[key].touched}
+            value={this.state.formConfig.paymentAmountConfig[key].value}
+            changed={(event) => this.handleChange(event, 'paymentAmountConfig', key)}
+            valid={this.state.formConfig.paymentAmountConfig[key].valid}
+            required={this.state.formConfig.paymentAmountConfig[key].validation.required}/>
+          );
+        })
+      );
+    }
+
+    let billingInfoKeysArray = [];
+    for(const key in this.state.formConfig.billingInfoConfig) {
+      billingInfoKeysArray.push(key);
+    }
+
+    let billingInfo = null;
+    if(this.state.formConfig.paymentInfoConfig.billingAddress.value === 'No') {
+      billingInfo = (
+        billingInfoKeysArray.map(key => {
+          return(
+          <Field
+            key={key}
+            label={this.state.formConfig.billingInfoConfig[key].label}
+            elementType={this.state.formConfig.billingInfoConfig[key].elementType} 
+            attributes={this.state.formConfig.billingInfoConfig[key].attributes}
+            options={this.state.formConfig.billingInfoConfig[key].options}
+            touched={this.state.formConfig.billingInfoConfig[key].touched}
+            value={this.state.formConfig.billingInfoConfig[key].value}
+            changed={(event) => this.handleChange(event, 'billingInfoConfig', key)}
+            valid={this.state.formConfig.billingInfoConfig[key].valid}
+            required={this.state.formConfig.billingInfoConfig[key].validation.required}/>
+          );
+        })
+      );
+    }
+
     let additionalInfoKeysArray = [];
     for(const key in this.state.formConfig.additionalInfoConfig) {
       additionalInfoKeysArray.push(key);
     }
 
+    let notification = null;
+    if(this.state.uploadSuccess === true) {
+      notification = (
+        <Notification success text="Your data has been uploaded successfully"/>
+      );
+    } else if (this.state.uploadFailure === true) {
+      notification = (
+        <Notification text="Your data failed to upload"/>
+      );
+    }
     return (
       <div className={classes.ConfigurableForm}>
         <section>
@@ -285,14 +414,35 @@ class ConfigurableForm extends Component {
               );
             })}
           </div>
+          <p className={classes.Disclaimer}> 
+            We Recommend Adding Travel Insurance At Time Of Deposit To Recieve Maximum Benefits.  Cancel 
+            For Any Reason Coverage Typically Must Be Purchased Within 14 Days Of Deposit, Policies May Vary.
+          </p>
         </section>
 
         <section>
           <div className={classes.Banner}>
-            <h1>Step 4: Payment Information</h1>
+            <h1>Step 4: Payment Information(optional)</h1>
           </div>
           <div className={classes.Skinny}>
-            
+            {paymentTypeKeysArray.map(key => {
+              return(
+                <Field
+                  key={key}
+                  label={this.state.formConfig.paymentTypeConfig[key].label}
+                  elementType={this.state.formConfig.paymentTypeConfig[key].elementType} 
+                  attributes={this.state.formConfig.paymentTypeConfig[key].attributes}
+                  options={this.state.formConfig.paymentTypeConfig[key].options}
+                  touched={this.state.formConfig.paymentTypeConfig[key].touched}
+                  value={this.state.formConfig.paymentTypeConfig[key].value}
+                  changed={(event) => this.handleChange(event, 'paymentTypeConfig', key)}
+                  valid={this.state.formConfig.paymentTypeConfig[key].valid}
+                  required={this.state.formConfig.paymentTypeConfig[key].validation.required}/>
+              );
+            })}
+            {paymentInfo}
+            {paymentAmount}
+            {billingInfo}
           </div>
         </section>
 
@@ -323,7 +473,8 @@ class ConfigurableForm extends Component {
         <br/>
         <p style={{margin: '10px'}}>{Constants.TERMS_TWO}</p>
         <hr/>
-        <button onClick={this.handleSubmit}>Submit</button>
+        {notification}
+        <button onClick={this.handleSubmit} disabled={!this.state.formIsValid}>Submit</button>
       </div>
     );
   }

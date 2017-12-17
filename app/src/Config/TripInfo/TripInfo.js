@@ -37,14 +37,14 @@ export default {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },
   departureAirport: {
     attributes: {
       type: 'text',
-      placeholder: "O'Hare"
+      placeholder: 'Columbus'
     },
     elementType: 'input',
     label: 'Departure Airport:',
@@ -52,7 +52,7 @@ export default {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },
@@ -67,7 +67,7 @@ export default {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },
@@ -79,7 +79,7 @@ export default {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },
@@ -91,7 +91,7 @@ export default {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },
@@ -103,7 +103,7 @@ export default {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },

@@ -1,13 +1,11 @@
-import * as Constants from '../../Constants/ReservationForm/ReservationForm';
-
 export default {
-  firstName: {
+  billingCountry: {
     attributes: {
       type: 'text',
-      placeholder: 'John'
+      placeholder: 'USA'
     },
     elementType: 'input',
-    label: 'First Name:',
+    label: 'Billing Country:',
     options: [],
     touched: false,
     value: '',
@@ -16,13 +14,28 @@ export default {
     },
     valid: false
   },
-  middleName: {
+  billingAddress1: {
     attributes: {
       type: 'text',
-      placeholder: 'Quentin'
+      placeholder: '123 Main St.'
     },
     elementType: 'input',
-    label: 'Middle Name:',
+    label: 'Billing Address:',
+    options: [],
+    touched: false,
+    value: '',
+    validation: {
+      required: true
+    },
+    valid: false
+  },
+  billingAddress2: {
+    attributes: {
+      type: 'text',
+      placeholder: '3B'
+    },
+    elementType: 'input',
+    label: 'Suite / Apt. #:',
     options: [],
     touched: false,
     value: '',
@@ -31,13 +44,13 @@ export default {
     },
     valid: false
   },
-  lastName: {
+  billingCity: {
     attributes: {
       type: 'text',
-      placeholder: 'Doe'
+      placeholder: 'Columbus'
     },
     elementType: 'input',
-    label: 'Last Name:',
+    label: 'Billing City:',
     options: [],
     touched: false,
     value: '',
@@ -46,24 +59,13 @@ export default {
     },
     valid: false
   },
-  suffix: {
-    attributes: {},
-    elementType: 'select',
-    label: 'Suffix:',
-    options: Constants.SUFFIXES,
-    touched: false,
-    value: '',
-    validation: {
-      required: false
-    },
-    valid: false
-  },
-  dob: {
+  billingState: {
     attributes: {
-      type: 'date'
+      type: 'text',
+      placeholder: 'Ohio'
     },
     elementType: 'input',
-    label: 'Date Of Birth:',
+    label: 'Billing State:',
     options: [],
     touched: false,
     value: '',
@@ -72,16 +74,20 @@ export default {
     },
     valid: false
   },
-  gender: {
-    attributes: {},
-    elementType: 'select',
-    label: 'Gender:',
-    options: Constants.GENDER_TYPES,
+  billingZip: {
+    attributes: {
+      type: 'text',
+      placeholder: '12345'
+    },
+    elementType: 'input',
+    label: 'Billing Zip Code:',
+    options: [],
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: true,
+      zip: true
     },
     valid: false
-  }
+  },
 }

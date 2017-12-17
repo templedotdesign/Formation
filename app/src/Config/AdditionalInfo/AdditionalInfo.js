@@ -10,7 +10,7 @@ export default {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },
@@ -25,7 +25,7 @@ export default {
     touched: false,
     value: '',
     validation: {
-      required: true
+      required: false
     },
     valid: false
   },
