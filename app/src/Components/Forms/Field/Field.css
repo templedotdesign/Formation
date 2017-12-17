@@ -1,0 +1,17 @@
+.Field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.Row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Field input {
+  width: 100%;
+}
+

@@ -1,0 +1,59 @@
+.ConfigurableForm {
+  width: 80%;
+  margin: 50px auto;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.Banner {
+  background-color: #ccc;
+  text-align: center;
+  padding: 10px;
+}
+
+.Skinny {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.Disclaimer {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  font-size: 1.2rem;
+}
+
+.Row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.ConfigurableForm button {
+  display: block;
+  padding: 20px;
+  margin: 30px auto;
+  font-family: inherit;
+  font-size: 1.3rem;
+  border-radius: 5px;
+}
+
+.ConfigurableForm button:hover {
+  background-color: #ccc;
+}
+
+@media(max-width:750px) {
+  .ConfigurableForm {
+    width: 100%;
+    margin: 0;
+  }
+
+  .Skinny {
+    width: 100%;
+  }
+
+  .ConfigurableForm select, .ConfigurableForm input, .ConfigurableForm textarea {
+    background-color: #ccc;
+  }
+}
