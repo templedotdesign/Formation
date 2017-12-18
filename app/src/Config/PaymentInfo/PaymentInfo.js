@@ -76,21 +76,6 @@ export default {
     },
     valid: false
   },
-  ccDescription: {
-    attributes: {
-      type: 'text',
-      placeholder: 'Describe Payment'
-    },
-    elementType: 'input',
-    label: 'Payment Description:',
-    options: [],
-    touched: false,
-    value: '',
-    validation: {
-      required: false
-    },
-    valid: false
-  },
   billingAddress: {
     attributes: {},
     elementType: 'select',

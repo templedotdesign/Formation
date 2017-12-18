@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import ConfigurableForm from '../Forms/ConfigurableForm/ConfigurableForm';
+import Home from '../Routes/Home/Home';
+import ReservationForm from '../Routes/ReservationForm/ReservationForm'; 
 
 class App extends Component {
   state = {
@@ -9,9 +11,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <ConfigurableForm/>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/reservations' component={ReservationForm}/>
+          <Route path='/' component={Home}/>          
+        </Switch>
+      </BrowserRouter>
     );
   }
 }

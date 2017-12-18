@@ -1,7 +1,7 @@
 import * as Constants from '../../Constants/ReservationForm/ReservationForm';
 
 export default {
-  preferredCruise: {
+  resort: {
     attributes: {
       type: 'text',
       placeholder: 'Princess Alaska'

@@ -1,7 +1,7 @@
 import * as Constants from '../../Constants/ReservationForm/ReservationForm';
 
 export default {
-  preferredResort: {
+  resort: {
     attributes: {
       type: 'text',
       placeholder: 'Sandals ochi'

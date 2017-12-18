@@ -127,7 +127,7 @@ export const CABIN_TYPES = [
   { value: 'Suite', name: 'Suite' }
 ];
 
-export const API_KEY = '9A9535E5-B636-4C3B-BAA7-56C87E2FD076  ';
+export const API_KEY = '...';
 
 export const TERMS_ONE = `By submitting, you certify that you are the cardholder and are authorizing the travel agency or its chosen 
 Tour Operator/Supplier/Cruise Line to charge the listed amount to the credit card. You certify that you have verified that all 
@@ -144,5 +144,3 @@ export const TERMS_TWO = `I authorize the travel agency to use the above informa
 appropriate travel identification and if passports are required we verify that passports are valid for 6 months following our return travel 
 date.  I verify that our names listed here match our identification EXACTLY or change fees may be assessed to make such corrections 
 as needed.  Completion and Signing of this form signifies acceptance.`
-
-export const EMAIL_EXPRESSION = ''
