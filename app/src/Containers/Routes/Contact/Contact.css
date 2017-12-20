@@ -1,0 +1,21 @@
+.Form {
+  width: 50%;
+  margin: 40px auto;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.Form button {
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: inherit;
+  padding: 10px;
+  background-color: white;
+}
+
+.Form button:hover {
+  background-color: black;
+  color: white;
+}

@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
+import Banner from '../../../Components/Banner/Banner';
 import ConfigurableForm from '../../Forms/ConfigurableForm/ConfigurableForm';
 
 class ReservationForm extends Component {
   render() {
     return(
-      <ConfigurableForm/>
+      <div>
+        <Banner text='Reservations'/>
+        <ConfigurableForm/>
+      </div>
     );
   }
 }

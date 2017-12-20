@@ -1,0 +1,70 @@
+.Banner {
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem; 
+  text-align: center;
+  padding: 30px; 
+  color: white;
+}
+
+.Paris {
+  background-image: url('../../../Assets/Paris.jpeg');
+  background-position: center;
+  align-items: center;      
+}
+
+.Washington {
+  background-image: url('../../../Assets/Washington.jpeg');
+  background-position: center;
+  align-items: flex-end;  
+}
+
+.Beach {
+  background-image: url('../../../Assets/Beach.jpeg');
+  background-position: top; 
+  align-items: flex-end;
+}
+
+.Rome {
+  background-image: url('../../../Assets/Rome.jpg');
+  background-position: top;
+}
+
+.Stonehenge {
+  background-image: url('../../../Assets/Stonehenge.jpeg');
+  background-position: center;
+  align-items: flex-end;
+}
+
+.Mountain {
+  background-image: url('../../../Assets/Stars.jpeg');
+  background-position: bottom; 
+  align-items: center;
+}
+
+.Alaska {
+  background-image: url('../../../Assets/Alaska.jpeg');
+  background-position: bottom;
+  align-items: center;
+}
+
+.NYC {
+  background-image: url('../../../Assets/NYC.jpeg');
+  background-position: center;
+  /* align-items: flex-end; */
+}
+
+.Venice {
+  background-image: url('../../../Assets/Venice.jpeg');
+  background-position: bottom;
+  align-items: center;
+}
+
+.Snow {
+  background-image: url('../../../Assets/Snow.jpeg');
+  background-position: center;
+  /* align-items: center; */
+}

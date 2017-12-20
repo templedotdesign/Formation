@@ -1,0 +1,9 @@
+.Payments {
+  width: 750px;
+  margin: 30px auto;
+}
+
+.Payments iframe {
+  width: 750px;
+  height: 100vh;
+}

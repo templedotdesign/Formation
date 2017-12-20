@@ -1,0 +1,110 @@
+.Banner {
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem; 
+  text-align: center;
+  padding: 30px; 
+  color: white;
+}
+
+.Paris {
+  background-image: url('../../Assets/Paris.jpeg');
+  background-position: center;
+  align-items: center;      
+}
+
+.Washington {
+  background-image: url('../../Assets/Washington.jpeg');
+  background-position: center;
+  align-items: flex-end;  
+}
+
+.Beach {
+  background-image: url('../../Assets/Beach.jpeg');
+  background-position: top; 
+  align-items: flex-end;
+}
+
+.Rome {
+  background-image: url('../../Assets/Rome.jpg');
+  background-position: top;
+}
+
+.Stonehenge {
+  background-image: url('../../Assets/Stonehenge.jpeg');
+  background-position: center;
+  align-items: flex-end;
+}
+
+.Mountain {
+  background-image: url('../../Assets/Stars.jpeg');
+  background-position: bottom; 
+  align-items: center;
+}
+
+.Alaska {
+  background-image: url('../../Assets/Alaska.jpeg');
+  background-position: bottom;
+  align-items: center;
+}
+
+.NYC {
+  background-image: url('../../Assets/NYC.jpeg');
+  background-position: center;
+}
+
+.Venice {
+  background-image: url('../../Assets/Venice.jpeg');
+  background-position: bottom;
+  align-items: center;
+}
+
+.Snow {
+  background-image: url('../../Assets/Snow.jpeg');
+  background-position: center;
+}
+
+.Arch {
+  background-image: url('../../Assets/DelicateArch.jpg');
+  background-position: center;
+  align-items: center;
+}
+
+.Coastal {
+  background-image: url('../../Assets/Coastal.jpeg');
+  background-position: center;
+  align-items: center;
+}
+
+.Balloon {
+  background-image: url('../../Assets/Balloon.jpg');
+  background-position: center;
+}
+
+.Seattle {
+  background-image: url('../../Assets/Seattle.jpeg');
+  background-position: center;
+  align-items: flex-end;
+}
+
+.Tennis {
+  background-image: url('../../Assets/Tennis.jpeg');
+  background-position: center;
+  align-items: center;
+}
+
+.Fireworks {
+  background-image: url('../../Assets/Fireworks.jpg');
+  background-position: center;
+  align-items: center;
+}
+
+.Cruise {
+  background-image: url('../../Assets/Cruise.jpeg');
+  background-position: center;
+  align-items: center;
+}
+
